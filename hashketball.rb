@@ -130,34 +130,37 @@ end
 
 # Write code here
 
+ #I want to match the name we are looking for with the name given as a value.
+#Once I match up the name, provide the :points
+#points = [:player_name][:points]
 
 
-def num_points_scored(string)
- 
-  #I want to match the name we are looking for with the name given as a value.
-  #Once I match up the name, provide the :points
-  
+def num_points_scored(string) 
   game_hash.each do |hash, info|
-      player_hash = info[:players] #this returns the key of players and the hash
+    player_hash = info[:players] #this returns the key of players and the hash  
+      player_hash.each do |key, result|
+        if(string == key[:player_name])
+          return key[:points]
+          #binding.pry
       
-      player_hash.each do |points, result|
-        if(string == points[:player_name])
-        return points[:points]
-        binding.pry
         end
-      
+      end
 
+  end 
+end
+
+def shoe_size(string) 
+  game_hash.each do |hash, info|
+    player_hash = info[:players] #this returns the key of players and the hash  
+      player_hash.each do |key, result|
+        if(string == key[:player_name])
+          return key[:shoe]
+          #binding.pry
       
-            #if string == [:player_name] 
-            #points = [:player_name][:points]
-     
-             #end
         end
-     
-        #info[:players][0][:points]
-    end 
+      end
+
+  end 
 end
 
 
-
-num_points_scored("person")
