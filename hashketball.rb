@@ -164,3 +164,45 @@ def shoe_size(string)
 end
 
 
+
+def team_colors(string)
+  game_hash.each do |key, value|
+    #i want to go in either the home hash or the away hash and i want to identify
+    #so i am going to iterate over those keys
+    team = game_hash[key][:team_name]
+    color = game_hash[key][:colors]
+    #the above is the team name
+    #the colors of the team are game_hash[key][:colors]
+     if (string == game_hash[key][:team_name])
+      p "hellooo hellooo"
+      #binding.pry
+       return color
+
+  
+     #the key will either return home or away
+      #if key[:home] = true
+      #home = key[:home]
+      end      
+  end
+end
+
+team_colors("string")
+
+
+def team_names
+  final = []
+  game_hash.each do |key, value|
+    team = game_hash[key][:team_name]
+    final << team
+    #binding.pry
+    # if (string == game_hash[key][:team_name])
+    #   p "hello we out here"
+      
+      
+
+    # end
+  end
+  p final
+end
+
+def player_numbers 
