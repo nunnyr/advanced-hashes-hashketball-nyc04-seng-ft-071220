@@ -1,4 +1,6 @@
 # Write your code below game_hash
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -127,3 +129,35 @@ def game_hash
 end
 
 # Write code here
+
+
+
+def num_points_scored(string)
+ 
+  #I want to match the name we are looking for with the name given as a value.
+  #Once I match up the name, provide the :points
+  
+  game_hash.each do |hash, info|
+      player_hash = info[:players] #this returns the key of players and the hash
+      
+      player_hash.each do |points, result|
+        if(string == points[:player_name])
+        return points[:points]
+        binding.pry
+        end
+      
+
+      
+            #if string == [:player_name] 
+            #points = [:player_name][:points]
+     
+             #end
+        end
+     
+        #info[:players][0][:points]
+    end 
+end
+
+
+
+num_points_scored("person")
