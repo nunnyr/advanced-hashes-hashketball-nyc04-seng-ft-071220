@@ -210,46 +210,41 @@ def player_numbers(string)
   #for every player we want the jersey
   #return only the jersey numbers in a final array
   #similar to how we got the points array
-  final = []
-  secondfinal = []
-  jersey = nil
+  brooklynNets = []
+  charlotte = []
+ 
+
+  if(string == "Brooklyn Nets")
     game_hash.each do |hash, info|
       
       player_hash = info[:players]
       
       player_hash.each do |key, result|
-        
-        #binding.pry
-
-        jersey = key[:number]
-        if string == "Brooklyn Nets" 
-          final.length < 5
-         final << jersey 
-         
-        else 
-           secondfinal << jersey 
-           
-      end 
-      
-    end
-    
+         jersey = key[:number]
+         if(brooklynNets.length < 5)
+         brooklynNets << jersey     
+        end
+        p brooklynNets
+      end
     end 
-    
+   
+    # p final 
+  end
 
-    p final
-    p secondfinal
-end
-
-# def num_points_scored(string) 
-#   game_hash.each do |hash, info|
-#     player_hash = info[:players] #this returns the key of players and the hash  
-#       player_hash.each do |key, result|
-#         if(string == key[:player_name])
-#           return key[:points]
-#           #binding.pry
+  # else
+  #   game_hash.each do |hash, info|
+  #     binding.pry
+  #     player_hash = info[:players]
       
-#         end
-#       end
+  #     player_hash.each do |key, result|
+  #        jersey = key[:number]
+  #        if(charlotte.length < 5)
+  #        charlotte << jersey     
+  #       end
+  #       p charlotte
+  #     end
+  #   end 
+    
+  # end
 
-#   end 
-# end
+end
